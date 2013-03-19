@@ -1,0 +1,43 @@
+﻿@model MerceariaDaGertrudes.Models.Produto
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<fieldset>
+    <legend>Produto</legend>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nome)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Preco)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Preco)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Validade)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Validade)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Descricao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Descricao)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Editar", "Editar", new { id = Model.ProdutoId }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>

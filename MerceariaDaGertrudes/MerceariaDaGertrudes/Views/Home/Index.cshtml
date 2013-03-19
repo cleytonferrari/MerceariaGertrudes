@@ -1,0 +1,33 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h2>Logar no sistema</h2>
+    
+    <span>
+        @ViewBag.Mensagem
+    </span>
+
+    @using (Html.BeginForm())
+    {
+        <fieldset>
+            <legend>Login</legend>
+            Login:
+    <input type="text" value="" name="login" id="login"/>
+            <br />
+            Senha:
+    <input type="password" value="" name="senha" id="senha"/>
+            <br />
+            <input type="submit" value="Entrar" />
+        </fieldset>
+    }
+</body>
+</html>
