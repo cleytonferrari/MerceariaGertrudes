@@ -10,7 +10,7 @@ namespace MerceariaDaGertrudes.Repositorio
 
         public Contexto()
         {
-            minhaConexao = new SqlConnection(ConfigurationManager.ConnectionStrings["SQLSERVER_URI"].ConnectionString);
+            minhaConexao = new SqlConnection(ConfigurationManager.ConnectionStrings["Mercearia"].ConnectionString);
             minhaConexao.Open();
         }
 
