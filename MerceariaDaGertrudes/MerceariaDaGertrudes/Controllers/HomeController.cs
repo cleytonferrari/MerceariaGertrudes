@@ -27,7 +27,7 @@ namespace MerceariaDaGertrudes.Controllers
                 FormsAuthentication.SetAuthCookie(login, false);
 
                 //Cria Variaveis Globais
-                TempData["Usuario"] = usuarioLogado;
+                Session["Usuario"] = usuarioLogado;
 
                 return RedirectToAction("Inicio");
             }
@@ -45,6 +45,7 @@ namespace MerceariaDaGertrudes.Controllers
         public ActionResult Sair()
         {
             FormsAuthentication.SignOut();
+            Session["Usuario"] = null;
             return RedirectToAction("Index");
         }
 

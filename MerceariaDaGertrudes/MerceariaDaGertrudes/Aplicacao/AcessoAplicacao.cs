@@ -10,7 +10,7 @@ namespace MerceariaDaGertrudes.Aplicacao
 {
     public class AcessoAplicacao
     {
-
+        
         private readonly Contexto contexto = new Contexto();
 
         public Usuario Logar(string login, string senha)
@@ -37,5 +37,6 @@ namespace MerceariaDaGertrudes.Aplicacao
             }
             return usuarios;
         }
+
     }
 }
