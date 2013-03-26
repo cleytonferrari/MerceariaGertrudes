@@ -20,10 +20,15 @@ namespace MerceariaDaGertrudes.Controllers
         public ActionResult Index(string login, string senha)
         {
             var acessoAplicacao = new AcessoAplicacao();
-            if (acessoAplicacao.Logar(login, senha))
+            var usuarioLogado = acessoAplicacao.Logar(login, senha);
+            if (usuarioLogado != null)
             {
                 //autentica ele
                 FormsAuthentication.SetAuthCookie(login, false);
+
+                //Cria Variaveis Globais
+                TempData["Usuario"] = usuarioLogado;
+
                 return RedirectToAction("Inicio");
             }
 
@@ -35,6 +40,12 @@ namespace MerceariaDaGertrudes.Controllers
         public ActionResult Inicio()
         {
             return View();
+        }
+
+        public ActionResult Sair()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index");
         }
 
     }

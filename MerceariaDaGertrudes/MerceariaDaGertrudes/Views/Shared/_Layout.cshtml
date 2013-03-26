@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using MerceariaDaGertrudes.Models
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -43,7 +44,11 @@
                 <a class="brand" href="@Url.Action("Inicio", "Home")">Mercearia Gertrudes</a>
                 <div class="nav-collapse collapse">
                     <p class="navbar-text pull-right">
-                        Cleyton Ferrari
+                        @{
+                            var usuario = (Usuario)TempData["Usuario"];  
+                        } 
+                        
+                        @usuario.Nome (<a href="@Url.Action("Sair", "Home")">Sair</a>)
                     </p>
                     <ul class="nav">
                         <li><a href="@Url.Action("Index", "Produto")">Produto</a></li>

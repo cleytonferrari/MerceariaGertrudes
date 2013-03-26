@@ -13,12 +13,12 @@ namespace MerceariaDaGertrudes.Aplicacao
 
         private readonly Contexto contexto = new Contexto();
 
-        public bool Logar(string login, string senha)
+        public Usuario Logar(string login, string senha)
         {
             var strQuery = string.Format(" SELECT * FROM usuario WHERE login='{0}' and senha='{1}' ", login, senha);
             var retorno = contexto.ExecutaComandoComRetorno(strQuery);
-            var usuario = TransformaReaderEmListaDeObjeto(retorno).FirstOrDefault();
-            return usuario != null;
+            return TransformaReaderEmListaDeObjeto(retorno).FirstOrDefault();
+            
         }
 
         private List<Usuario> TransformaReaderEmListaDeObjeto(SqlDataReader reader)
